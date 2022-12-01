@@ -16,3 +16,11 @@ foreach (var line in lines)
 
 var largest = elves.Max();
 Console.WriteLine(largest);
+
+elves.Sort();
+var top3 = 0;
+for (var i = 1; i <= 3; i++)
+{
+    top3 += elves[^i];
+}
+Console.WriteLine(top3);

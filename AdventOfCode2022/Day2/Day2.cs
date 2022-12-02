@@ -7,43 +7,54 @@ var score = 0;
 foreach (var line in lines)
 {
     var enemyMove = (Move) line[0] - 65;
-    var playerMove = (Move) line[2] - 88;
+    var gameState = (GameState) line[2] - 88;
     //Console.WriteLine(" enemy move " + enemyMove.ToString() + " player move " + playerMove.ToString());
 
-    if (playerMove == Move.ROCK)
+    if (gameState == GameState.LOSE)
     {
-        score += 1;
-        if (enemyMove == Move.SCISSORS)
-        {
-            score += 6;
-        }
-        else if (enemyMove == playerMove)
-        {
-            score += 3;
-        }
-    }
-    else if (playerMove == Move.PAPER)
-    {
-        score += 2;
         if (enemyMove == Move.ROCK)
         {
-            score += 6;
+            score += 3;
         }
-        else if (enemyMove == playerMove)
+        else if (enemyMove == Move.PAPER)
+        {
+            score += 1;
+        }
+        else if (enemyMove == Move.SCISSORS)
+        {
+            score += 2;
+        }
+    }
+    else if (gameState == GameState.DRAW)
+    {
+        score += 3;
+        if (enemyMove == Move.ROCK)
+        {
+            score += 1;
+        }
+        else if (enemyMove == Move.PAPER)
+        {
+            score += 2;
+        }
+        else if (enemyMove == Move.SCISSORS)
         {
             score += 3;
         }
     }
-    else if (playerMove == Move.SCISSORS)
+    else if (gameState == GameState.WIN)
     {
-        score += 3;
-        if (enemyMove == Move.PAPER)
+        score += 6;
+        if (enemyMove == Move.ROCK)
         {
-            score += 6;
+            score += 2;
         }
-        else if (enemyMove == playerMove)
+        else if (enemyMove == Move.PAPER)
         {
             score += 3;
+        }
+        else if (enemyMove == Move.SCISSORS)
+        {
+            score += 1;
         }
     }
 }
@@ -55,4 +66,11 @@ enum Move
     ROCK,
     PAPER,
     SCISSORS
+}
+
+enum GameState
+{
+    LOSE,
+    DRAW,
+    WIN
 }

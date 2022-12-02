@@ -1,0 +1,58 @@
+﻿//day 2 elves code https://adventofcode.com/2022/day/2
+
+
+var lines = File.ReadAllLines("input.txt");
+var score = 0;
+
+foreach (var line in lines)
+{
+    var enemyMove = (Move) line[0] - 65;
+    var playerMove = (Move) line[2] - 88;
+    //Console.WriteLine(" enemy move " + enemyMove.ToString() + " player move " + playerMove.ToString());
+
+    if (playerMove == Move.ROCK)
+    {
+        score += 1;
+        if (enemyMove == Move.SCISSORS)
+        {
+            score += 6;
+        }
+        else if (enemyMove == playerMove)
+        {
+            score += 3;
+        }
+    }
+    else if (playerMove == Move.PAPER)
+    {
+        score += 2;
+        if (enemyMove == Move.ROCK)
+        {
+            score += 6;
+        }
+        else if (enemyMove == playerMove)
+        {
+            score += 3;
+        }
+    }
+    else if (playerMove == Move.SCISSORS)
+    {
+        score += 3;
+        if (enemyMove == Move.PAPER)
+        {
+            score += 6;
+        }
+        else if (enemyMove == playerMove)
+        {
+            score += 3;
+        }
+    }
+}
+
+Console.WriteLine(score);
+
+enum Move
+{
+    ROCK,
+    PAPER,
+    SCISSORS
+}

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode2022", "AdventOfCode2022\AdventOfCode2022.csproj", "{8E3EA63E-6C17-457F-8226-82D64BBB7979}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1", "Day1\Day1.csproj", "{8E3EA63E-6C17-457F-8226-82D64BBB7979}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day2", "Day2\Day2.csproj", "{9B924031-E2B1-48F8-82D4-F002886BDB9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +14,9 @@ Global
 		{8E3EA63E-6C17-457F-8226-82D64BBB7979}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E3EA63E-6C17-457F-8226-82D64BBB7979}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E3EA63E-6C17-457F-8226-82D64BBB7979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B924031-E2B1-48F8-82D4-F002886BDB9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B924031-E2B1-48F8-82D4-F002886BDB9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B924031-E2B1-48F8-82D4-F002886BDB9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B924031-E2B1-48F8-82D4-F002886BDB9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

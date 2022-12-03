@@ -5,14 +5,14 @@ var total = (from line in lines
     let half = line.Length / 2
     let part1 = line[..half]
     let part2 = line[half..]
-    select part1.First(x => part2.Contains(x))
+    select part1.First(part2.Contains)
     into match
     select CharToPriority(match)).Sum();
 
 Console.WriteLine(total);
 
 int CharToPriority(char input) {
-    if (Char.IsUpper(input)) {
+    if (char.IsUpper(input)) {
         return input - 38;
     }
 
